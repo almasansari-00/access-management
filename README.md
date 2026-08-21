@@ -1,36 +1,143 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# New Age — Access Management
 
-## Getting Started
+A full-stack Access Management application that enables employees to discover available resources, submit access requests, track request status, and allows administrators to review and manage access provisioning workflows.
 
-First, run the development server:
+Built as part of the Intern Full-Stack Developer Demo Task.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+New Age Access Management provides a centralized workflow for managing access to internal applications, tools, boards, and collaboration resources.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The application supports:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Employee authentication
+- Access discovery and search
+- Access detail views
+- Access requests for self or another employee
+- Request tracking
+- Administrative approval and rejection
+- Automated provisioning simulation
+- Manual provisioning simulation
+- Persistent application data
 
-## Learn More
+## Core Workflow
 
-To learn more about Next.js, take a look at the following resources:
+### Employee Flow
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Create an account
+2. Sign in
+3. Browse the Access Directory
+4. Search for an application or resource
+5. Open access details
+6. Submit an access request
+7. Track request status
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Admin Flow
 
-## Deploy on Vercel
+1. Open the Admin Console
+2. Review pending requests
+3. Approve or reject requests
+4. Handle provisioning
+5. Complete manual provisioning when required
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Provisioning
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Automated access:
+
+Pending Approval
+→ Completed
+
+Manual access:
+
+Pending Approval
+→ Pending Manual Provisioning
+→ Completed
+
+## Features
+
+### Authentication
+
+- Sign up
+- Login
+- Logout
+- Persistent Supabase authentication session
+- Email confirmation support
+- Profile creation
+
+### Access Directory
+
+- Available applications and resources
+- Search functionality
+- Categories
+- Automated/manual provisioning labels
+- Approver information
+- Access detail pages
+
+### Access Requests
+
+Users can request access:
+
+- For themselves
+- On behalf of another employee
+
+Each request stores:
+
+- Requester
+- Requested employee
+- Access resource
+- Business reason
+- Request status
+- Provisioning status
+- Creation timestamp
+- Updated timestamp
+
+### Administration
+
+Administrators can:
+
+- View access requests
+- Approve requests
+- Reject requests
+- Complete manual provisioning
+- Monitor request status
+
+### Data Persistence
+
+Application data is persisted using Supabase PostgreSQL.
+
+Supabase Authentication is used for user identity and sessions.
+
+## Technology Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- Supabase
+- PostgreSQL
+- Lucide React
+- Vercel
+
+## Project Structure
+
+```text
+access-management/
+├── app/
+│   ├── admin/
+│   ├── access/
+│   ├── dashboard/
+│   ├── login/
+│   ├── requests/
+│   ├── signup/
+│   └── page.tsx
+│
+├── lib/
+│   └── supabase-browser.ts
+│
+├── public/
+│
+├── .env.example
+├── .gitignore
+├── package.json
+├── README.md
+└── tsconfig.json
