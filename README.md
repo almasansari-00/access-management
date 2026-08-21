@@ -4,6 +4,14 @@ A full-stack Access Management application that enables employees to discover av
 
 Built as part of the Intern Full-Stack Developer Demo Task.
 
+## Live Demo
+
+https://access-management-rust.vercel.app/
+
+## Repository
+
+https://github.com/almasansari-00/access-management
+
 ## Overview
 
 New Age Access Management provides a centralized workflow for managing access to internal applications, tools, boards, and collaboration resources.
