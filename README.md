@@ -12,6 +12,8 @@ https://access-management-rust.vercel.app/
 
 https://github.com/almasansari-00/access-management
 
+## loom live
+https://www.loom.com/share/85cfef4f6954458ab8f51cceab2a8e2b
 ## Overview
 
 New Age Access Management provides a centralized workflow for managing access to internal applications, tools, boards, and collaboration resources.
